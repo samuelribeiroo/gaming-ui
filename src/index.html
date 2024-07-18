@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
+  <script type="module" src="app.js" defer></script>
+  <script type="module" src="./database/api.js" defer></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>Gaming UI | Filter</title>
+</head>
+
+<body>
+  <header class="header-container">
+    <span class="header-list">
+      <img src="./assets/steam-logo.svg" alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
+      <ul>
+        <li><a href="#" class="header-item-list">Loja</a></li>
+        <li><a href="#" class="header-item-list">Comunidade</a></li>
+        <li><a href="#" class="header-item-list">Biblioteca</a></li>
+        <li><a href="#" class="header-item-list">Ajuda</a></li>
+      </ul>
+    </span>
+    <div class="user-info-container">
+      <img src="./assets/noticiations.svg" alt="">
+      <img src="./assets/Vector.svg" alt="">
+      <img src="./assets/Group 1.svg" alt="">
+      <img src="./assets/chevron-right.svg" alt="">
+    </div>
+  </header>
+
+  <section data-carousel>
+    <button class="carousel-button" data-carousel-button="prev">
+      <img src="./assets/arrow-left.svg" alt="" srcset="" width="20px">
+    </button>
+    <button class="carousel-button" data-carousel-button="next">
+      <img src="./assets/arrow-right.svg" alt="" srcset="" width="20px">
+    </button>
+    <div data-slides>
+      <div data-active>
+        <img src="./assets/fps-shooting-game.jpeg" alt="Imagem do jogo FPS" aria-label="FPS GAME" fetchpriority="high">
+      </div>
+      <div>
+        <img src="./assets/nba-2k24-game.jpeg" alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
+      </div>
+      <div>
+        <img src="./assets/soldiers-game.jpeg" alt="Imagem do jogo de ação" aria-label="NINJA GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/motor-riding-game.jpeg" alt="Imagem do jogo de corrida" aria-label="MOTO GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/assasins-creed.jpeg" alt="Imagem do jogo de mundo aberto" aria-label="GTA GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/cyberpunk-game.jpeg" alt="Imagem do jogo de cyberpunk" aria-label="CYBERPUNK GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/police-office-game.jpeg" alt="Imagem do jogo de policial" aria-label="POLICE GAME" fetchpriority="high">
+      </div>
+    </div>
+    </div>
+    <!-- Inline css is not definitive, will be placed on the-->
+    <span style="display: flex; flex-direction: column; gap: 18px; justify-content: center; position: absolute; top: 20px; left: 26%; transform: translateX(-50%); z-index: 10; margin-top: 212px;">
+      <img src="./assets/steam-logo.svg" alt="" srcset="" width="60px">
+      <p style=" color: #fafafa;  font-weight: 500; font-size: 18px; line-height: 26px;">A Steam é uma plataforma digital onde você pode comprar, <br>baixar e jogar uma vasta seleção de jogos no seu computador.</p>
+      <button class="button-cta" style="position: absolute; top: 20px; left: 21%; transform: translateX(-50%); z-index: 10; margin-top: 132px;">
+        <a href="#" id="buy">Saiba Mais</a>
+    </span>
+    </button>
+  </section>
+
+
+
+  <main class="main-container">
+
+    <section class="application-links" style="margin-top: 45px;">
+      <ul class="links-items-container">
+        <li>
+          <a href="#" class="links-items">Novidades e tendências</a>
+        </li>
+        <li>
+          <a href="#" class="links-items">Categorias</a>
+        </li>
+        <li>
+          <a href="#" class="links-items">Lojas e Pontos</a>
+        </li>
+        <li>
+          <a href="#" class="links-items">Noticías</a>
+        </li>
+        <li>
+          <a href="#" class="links-items">Laboratório</a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="input-container" style="margin-top: 45px;">
+      <input type="text" placeholder="BUSCAR" value="">
+      <img src="./assets/search.svg" alt="" srcset="" class="input-icon">
+    </div>
+
+    <section class="card-game-container">
+      <div class="card-game-element">
+        <img src="./assets/ea-sports.avif" alt="">
+        <img src="./assets/cod.avif" alt="">
+        <img src="./assets/fortnite.avif" alt="">
+        <img src="./assets/elden.avif" alt="">
+        <img src="./assets/college-footbal.avif" alt="">
+        <img src="./assets/mlb.avif" alt="">
+        <img src="./assets/madden.avif" alt="">
+      </div>
+    </section>
+  </main>
+  <footer class="footer-home" style="margin-top: 45px;">
+    <img src="./assets/steam-logo.svg" alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
+  </footer>
+  <div style="border: 2px dashed purple; padding: 1.5rem; margin: 2rem;" class="pre-component">
+  </div>
+</body>
+
+</html>
