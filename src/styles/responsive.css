@@ -1,0 +1,41 @@
+/* Mobile -> Iphone 14 PRO (380px x 852px) */
+@media screen and (max-width: 768px) {
+  .steam-advisor,
+  .button-cta {
+    display: none;
+    border: 1px solid red;
+  }
+
+  .carousel-slider-container img {
+    height: 100%;
+    object-fit: scale-down;
+  }
+
+  .application-links {
+    display: none;
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 852px;
+    width: 380px;
+    margin: 0;
+    margin-top: -30px;
+  }
+
+  .input-container {
+    width: 327px;
+    padding: 0 10px;
+  }
+
+  input {
+    height: 50px;
+  }
+
+  .input-icon {
+    top: 23px;
+    right: 10px;
+  }
+}
