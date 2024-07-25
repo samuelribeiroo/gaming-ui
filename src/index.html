@@ -7,17 +7,18 @@
   <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
   <script type="module" src="app.js" defer></script>
   <script type="module" src="./database/api.js" defer></script>
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="./styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="preload" as="style">
   <title>Gaming UI | Filter</title>
 </head>
 
 <body>
   <header class="header-container">
     <span class="header-list">
-      <img src="./assets/steam-logo.svg" alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
+      <img src="./assets/steam-logo.svg" alt="Logo" loading='lazy' aria-label="Logo Imagem" fetchpriority="high">
       <ul>
         <li><a href="#" class="header-item-list">Loja</a></li>
         <li><a href="#" class="header-item-list">Comunidade</a></li>
@@ -26,53 +27,72 @@
       </ul>
     </span>
     <div class="user-info-container">
-      <img src="./assets/noticiations.svg" alt="">
-      <img src="./assets/Vector.svg" alt="">
-      <img src="./assets/Group 1.svg" alt="">
-      <img src="./assets/chevron-right.svg" alt="">
+      <img src="./assets/noticiations.svg" loading='lazy' alt="">
+      <img src="./assets/Vector.svg" loading='lazy' alt="">
+      <img src="./assets/Group 1.svg" loading='lazy' alt="">
+      <img src="./assets/chevron-right.svg" loading='lazy' alt="">
     </div>
   </header>
 
   <section data-carousel>
-    <button class="carousel-button" data-carousel-button="prev">
-      <img src="./assets/arrow-left.svg" alt="" srcset="" width="20px">
+    <button type="button" class="carousel-button" data-carousel-button="prev">
+      <img src="./assets/arrow-left.svg" loading='lazy' alt="" srcset="" width="20px">
     </button>
-    <button class="carousel-button" data-carousel-button="next">
-      <img src="./assets/arrow-right.svg" alt="" srcset="" width="20px">
+    <button type="button" class="carousel-button" data-carousel-button="next">
+      <img src="./assets/arrow-right.svg" loading='lazy' alt="" srcset="" width="20px">
     </button>
-    <div data-slides>
+    <div data-slides class="carousel-slider-container">
       <div data-active>
-        <img src="./assets/fps-shooting-game.jpeg" alt="Imagem do jogo FPS" aria-label="FPS GAME" fetchpriority="high">
-      </div>
-      <div>
-        <img src="./assets/nba-2k24-game.jpeg" alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
-      </div>
-      <div>
-        <img src="./assets/soldiers-game.jpeg" alt="Imagem do jogo de ação" aria-label="NINJA GAME" fetchpriority="high">
+        <img src="./assets/all-games.jpeg" loading='lazy' alt="Imagem do jogo FPS" aria-label="FPS GAME" fetchpriority="high">
       </div>
 
       <div>
-        <img src="./assets/motor-riding-game.jpeg" alt="Imagem do jogo de corrida" aria-label="MOTO GAME" fetchpriority="high">
+        <img src="./assets/fps-shooting-game.jpeg" loading='lazy' alt="Imagem do jogo FPS" aria-label="FPS GAME" fetchpriority="high">
       </div>
 
       <div>
-        <img src="./assets/assasins-creed.jpeg" alt="Imagem do jogo de mundo aberto" aria-label="GTA GAME" fetchpriority="high">
+        <img src="./assets/race-game.jpeg" loading='lazy' alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
       </div>
 
       <div>
-        <img src="./assets/cyberpunk-game.jpeg" alt="Imagem do jogo de cyberpunk" aria-label="CYBERPUNK GAME" fetchpriority="high">
+        <img src="./assets/gta-online.jpeg" loading='lazy' alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
       </div>
 
       <div>
-        <img src="./assets/police-office-game.jpeg" alt="Imagem do jogo de policial" aria-label="POLICE GAME" fetchpriority="high">
+        <img src="./assets/race-game2.jpeg" loading='lazy' alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/american-soccer.jpeg" loading='lazy' alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/nba-2k24-game.jpeg" loading='lazy' alt="Imagem do jogo de basquete." aria-label="BASKET GAME" fetchpriority="high">
+      </div>
+      <div>
+        <img src="./assets/soldiers-game.jpeg" loading='lazy' alt="Imagem do jogo de ação" aria-label="NINJA GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/motor-riding-game.jpeg" loading='lazy' alt="Imagem do jogo de corrida" aria-label="MOTO GAME" fetchpriority="high">
+      </div>
+
+
+      <div>
+        <img src="./assets/cyberpunk-game.jpeg" loading='lazy' alt="Imagem do jogo de cyberpunk" aria-label="CYBERPUNK GAME" fetchpriority="high">
+      </div>
+
+      <div>
+        <img src="./assets/police-office-game.jpeg" loading='lazy' alt="Imagem do jogo de policial" aria-label="POLICE GAME" fetchpriority="high">
       </div>
     </div>
     </div>
-    <!-- Inline css is not definitive, will be placed on the-->
-    <span style="display: flex; flex-direction: column; gap: 18px; justify-content: center; position: absolute; top: 20px; left: 26%; transform: translateX(-50%); z-index: 10; margin-top: 212px;">
-      <img src="./assets/steam-logo.svg" alt="" srcset="" width="60px">
-      <p style=" color: #fafafa;  font-weight: 500; font-size: 18px; line-height: 26px;">A Steam é uma plataforma digital onde você pode comprar, <br>baixar e jogar uma vasta seleção de jogos no seu computador.</p>
-      <button class="button-cta" style="position: absolute; top: 20px; left: 21%; transform: translateX(-50%); z-index: 10; margin-top: 132px;">
+
+    <!-- This inline CSS is not definitive forward will be moved to css main file -->
+    <span style="display: flex; flex-direction: column; gap: 18px; justify-content: center; position: absolute; top: 20px; left: 26%; transform: translateX(-50%); z-index: 10; margin-top: 212px;" class="steam-advisor">
+      <img class="steam-advisor-img" src="./assets/steam-logo.svg" alt="" srcset="" width="60px">
+      <p class="steam-advisor-text" style=" color: #fafafa;  font-weight: 500; font-size: 18px; line-height: 26px;">A Steam é uma plataforma digital onde você pode comprar, <br>baixar e jogar uma vasta seleção de jogos no seu computador.</p>
+      <button type="button" class="button-cta" style="position: absolute; top: 20px; left: 21%; transform: translateX(-50%); z-index: 10; margin-top: 132px;">
         <a href="#" id="buy">Saiba Mais</a>
       </button>
     </span>
@@ -81,7 +101,6 @@
 
 
   <main class="main-container">
-
     <section class="application-links" style="margin-top: 45px;">
       <ul class="links-items-container">
         <li>
@@ -104,24 +123,23 @@
 
     <div class="input-container" style="margin-top: 45px;">
       <input type="text" placeholder="BUSCAR" value="">
-      <img src="./assets/search.svg" alt="" srcset="" class="input-icon">
+      <img src="./assets/search.svg" loading='lazy' alt="" srcset="" class="input-icon">
     </div>
 
     <section class="card-game-container">
       <div class="card-game-element" id="card-game">
       </div>
       <div style="display: flex; place-content: center; margin-top: 2.15rem;">
-        <button class="see-more" id="load-more-games">
-          <a href="#" id="buy">VER MAIS</a>
-        </button>
+        <button type="button" class="see-more" id="load-more-games">VER MAIS</button>
       </div>
     </section>
   </main>
+  <!-- Footer in some screen size arent at the end -> FIX THAT -->
   <footer class="footer-home" style="margin-top: 45px;">
-    <img src="./assets/steam-logo.svg" alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
+    <img src="./assets/steam-logo.svg" loading='lazy' alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
   </footer>
   <!-- <div style="border: 2px dashed purple; padding: 1.5rem; margin: 2rem;" class="pre-component">
-  </div> -->
-</body> 
+  </div> !-->
+</body>
 
 </html>
