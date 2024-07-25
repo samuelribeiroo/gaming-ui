@@ -1,11 +1,38 @@
-/* Mobile -> Iphone 14 PRO (380px x 852px) */
-@media screen and (max-width: 768px) {
-  .steam-advisor,
-  .button-cta {
-    display: none;
-    border: 1px solid red;
+@media (max-width: 1210px) {
+  .carousel-slider-container img {
+    max-width: 100%;
+    height: auto;
   }
 
+  .application-links {
+    display: none;
+  }
+
+  .button-cta,
+  .steam-advisor,
+  .steam-advisor-img,
+  .steam-advisor-text {
+    display: none;
+  }
+
+  .input-container {
+    width: 904px;
+  }
+
+  .card-game-element {
+    grid-template-columns: repeat(3, 280px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-game-element {
+    grid-template-columns: repeat(2, 280px);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
   .carousel-slider-container img {
     height: 100%;
     object-fit: scale-down;
@@ -15,27 +42,58 @@
     display: none;
   }
 
-  .main-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 852px;
-    width: 380px;
-    margin: 0;
-    margin-top: -30px;
+  .button-cta,
+  .steam-advisor,
+  .steam-advisor-img,
+  .steam-advisor-text {
+    display: none;
+  }
+
+  .card-game-element {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-slider-container img {
+    height: 100%;
+    object-fit: scale-down;
+  }
+
+  .application-links {
+    display: none;
+  }
+
+  .button-cta,
+  .steam-advisor,
+  .steam-advisor-img,
+  .steam-advisor-text {
+    display: none;
   }
 
   .input-container {
     width: 327px;
-    padding: 0 10px;
+    margin-right: 915px;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
-  input {
-    height: 50px;
+  input,
+  .see-more {
+    width: 327px;
+    margin-right: 1.5rem;
   }
 
-  .input-icon {
-    top: 23px;
-    right: 10px;
+  .card-game-container {
+    margin-right: 890px;
+  }
+
+  .card-game-element {
+    grid-template-columns: 1fr; 
+    justify-content: center;
+    margin-left: 50px;
+  }
+  .card-game-element img {
+    width: 200px;
   }
 }
