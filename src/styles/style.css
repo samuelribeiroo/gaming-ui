@@ -119,8 +119,9 @@ li {
 
 .application-links {
   background-color: #1b2838;
-  width: 1215px;
-  height: 60px;
+  width: 100%;
+  max-width: 1215px;
+  min-height: 60px;
   padding: 1.4rem;
   border-radius: var(--borderRadiusMedium);
 }
@@ -128,8 +129,12 @@ li {
 .links-items-container {
   cursor: pointer;
   display: flex;
-  place-content: center;
-  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* place-content: center; */
+  flex-wrap: wrap;
+  gap: 20px 80px;
 }
 
 .links-items {
@@ -139,11 +144,31 @@ li {
   font-weight: var(--font600);
   font-size: var(--fontSizeBase300);
   letter-spacing: 0.8px;
+  flex: 0 1 auto;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.links-items::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  background-color: var(--sky-400);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .links-items:hover {
   transition: all ease-in-out 7ms;
   color: var(--sky-400);
+}
+
+.links-items:hover::after {
+  transform: scaleX(1); /* Expande o elemento para largura total ao passar o mouse */
 }
 
 .footer-home {
