@@ -1,17 +1,20 @@
-const buttons = document.querySelectorAll(".carousel-button"); // Buttons of what? Specialize where this buttos are being used...
+const sliderCarouselButtons = document.querySelectorAll(".carousel-button");
 const cardImageGamecontainer = document.getElementById("card-game");
+const searchInput = document.querySelectorAll(".search-game")[0];
 import { GameListAPI } from "./database/api.js";
 const loadMoreButton = document.getElementById("load-more-games");
+const loadingSpinner = document.createElement("span");
 
-const loadingSpinner = document.createElement("span"); 
-loadingSpinner.classList.add("loading"); 
-cardImageGamecontainer.appendChild(loadingSpinner); 
+loadingSpinner.classList.add("loading");
+cardImageGamecontainer.appendChild(loadingSpinner);
 
-import setFakeDelay from "./helpers/utils.js"; 
+import setFakeDelay from "./helpers/utils.js";
 
 const gamesAPI = GameListAPI;
 
-buttons.forEach(button => button.addEventListener("click", () => handleMouseOnClickCarousel(button)));
+sliderCarouselButtons.forEach(button =>
+  button.addEventListener("click", () => handleMouseOnClickCarousel(button))
+);
 
 function handleMouseOnClickCarousel(button) {
   const carousel = button.closest("[data-carousel]");
@@ -41,7 +44,7 @@ function handleMouseOnClickCarousel(button) {
 function onInitialRender(games) {
   games.map(({ imageURL, name }) => {
     const cardBoxElement = document.createElement("span");
-    cardBoxElement.innerHTML = `<img src="${imageURL}" alt="${name}" class="card-game-img">`;
+    cardBoxElement.innerHTML = `<img src="${imageURL}" alt="${name}" class="card-game-img" loading="lazy" fetchpriority="high">`;
     cardImageGamecontainer.appendChild(cardBoxElement);
   });
 }
@@ -72,11 +75,69 @@ function onHandleLoadMore() {
       loadMoreButton.disabled = false;
       loadingSpinner.style.display = "none";
     }
-  })
+  });
 }
 
-// Load initial games
+function handleSearch(term, jsonData) {
+  if (!term.trim()) {
+    return jsonData;
+  }
+
+  const switchToLowerCase = term.toLowerCase();
+
+  const handleSearchedValue = jsonData.filter((item) => {
+    return Object.values(item).some((value) =>
+      String(value).toLowerCase().includes(switchToLowerCase)
+    );
+  });
+
+  return handleSearchedValue;
+}
+
+function handleSearchInput(event) {
+  const getSearchTerm = event.target.value;
+
+  const handleGetResults = handleSearch(getSearchTerm, gamesAPI);
+
+  displaySearchResults(handleGetResults);
+}
+
+function displaySearchResults(results) {
+  cardImageGamecontainer.innerHTML = "";
+
+  if (results.length === 0) {
+    displayNoResults();
+
+    loadMoreButton.style.display = "none";
+  } else {
+    results.forEach(({ imageURL, name }) => {
+      const cardBoxElement = document.createElement("span");
+      cardBoxElement.innerHTML = `<img src="${imageURL}" alt="${name}" class="card-game-img" loading="lazy" fetchpriority="high">`;
+      cardImageGamecontainer.appendChild(cardBoxElement);
+    });
+  }
+
+  if (results.length >= gamesAPI.length) {
+    loadMoreButton.disabled = true;
+    loadMoreButton.textContent = "Todos os jogos carregados.";
+  } else {
+    loadMoreButton.disabled = false;
+    loadMoreButton.textContent = "Carregar mais";
+  }
+}
+
+function displayNoResults() {
+  const inexistResult = document.createElement("div");
+
+  inexistResult.className = "show-off";
+
+  inexistResult.textContent = "Nenhum jogo foi encontrado.";
+
+  cardImageGamecontainer.appendChild(inexistResult);
+}
+
+searchInput.addEventListener("input", handleSearchInput);
+
 onHandleLoadMore();
 
-// Button -> Invoked the function 'onHandleLoadMore' and bring it more data from mock api.
 loadMoreButton.addEventListener("click", onHandleLoadMore);
