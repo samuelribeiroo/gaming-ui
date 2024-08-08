@@ -1,4 +1,4 @@
-@media (max-width: 1210px) {
+/* @media (max-width: 1210px) {
   .carousel-slider-container img {
     max-width: 100%;
     height: auto;
@@ -33,6 +33,23 @@
 }
 
 @media (max-width: 768px) {
+  .header-container {
+    display: none;
+  }
+
+  .input-container input {
+    max-width: 868px;
+  }
+
+  .input-container img {
+    margin-right: 68px;
+  }
+
+  #data-carousel,
+  footer {
+    width: 918px;
+  }
+
   .carousel-slider-container img {
     height: 100%;
     object-fit: scale-down;
@@ -50,11 +67,20 @@
   }
 
   .card-game-element {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-game-container {
+    margin-right: 90px;
   }
 }
 
 @media (max-width: 500px) {
+  #data-carousel,
+  footer {
+    width: 400px;
+  }
+
   .carousel-slider-container img {
     height: 100%;
     object-fit: scale-down;
@@ -89,11 +115,57 @@
   }
 
   .card-game-element {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     justify-content: center;
     margin-left: 50px;
   }
   .card-game-element img {
     width: 200px;
+  }
+} */
+
+@media screen and (max-width: 1024px) {
+   .steam-advisor, .steam-advisor-img, .steam-advisor-text, .button-cta {
+    display: none;
+   }
+  
+  .links-items {
+    font-size: var(--fontSizeBase200); 
+  }
+
+  .card-game-element {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .application-links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card-game-element {
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .card-game-element {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-game-element {
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    justify-content: center;
   }
 }
