@@ -180,7 +180,7 @@ li {
 
 .button-cta {
   width: 230px;
-  height: 56px;
+  min-height: 56px;
   background-color: var(--sky-400);
   color: var(--slate-100);
   border: none;
@@ -257,8 +257,8 @@ input:focus::placeholder {
 }
 
 .card-game-container {
-  width: 1216px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1216px;
   margin-top: 5.7rem;
 }
 
@@ -379,6 +379,10 @@ input:focus::placeholder {
   border: 5px solid var(--slate-100);
   border-top-color: var(--sky-400);
   animation: spin 1s linear infinite;
+}
+
+.show-off {
+font-size: 1.425rem;
 }
 
 @keyframes spin {

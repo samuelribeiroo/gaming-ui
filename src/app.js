@@ -85,8 +85,8 @@ function handleSearch(term, jsonData) {
 
   const switchToLowerCase = term.toLowerCase();
 
-  const handleSearchedValue = jsonData.filter((item) => {
-    return Object.values(item).some((value) =>
+  const handleSearchedValue = jsonData.filter(item => {
+    return Object.values(item).some(value =>
       String(value).toLowerCase().includes(switchToLowerCase)
     );
   });
