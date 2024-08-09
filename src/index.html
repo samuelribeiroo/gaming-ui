@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="./styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="preload" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" crossorigin="anonymous">
   <title>Gaming UI | Filter</title>
 </head>
 
 <body>
+
   <header class="header-container">
     <span class="header-list">
       <img src="./assets/steam-logo.svg" alt="Logo" loading='lazy' aria-label="Logo Imagem" fetchpriority="high">
@@ -32,9 +33,10 @@
       <img src="./assets/Group 1.svg" loading='lazy' alt="">
       <img src="./assets/chevron-right.svg" loading='lazy' alt="">
     </div>
+
   </header>
 
-  <section data-carousel>
+  <section data-carousel id="data-carousel">
     <button type="button" class="carousel-button" data-carousel-button="prev">
       <img src="./assets/arrow-left.svg" loading='lazy' alt="" srcset="" width="20px">
     </button>
@@ -88,7 +90,7 @@
     </div>
     </div>
 
-    <!-- This inline CSS is not definitive forward will be moved to css main file -->
+
     <span style="display: flex; flex-direction: column; gap: 18px; justify-content: center; position: absolute; top: 20px; left: 26%; transform: translateX(-50%); z-index: 10; margin-top: 212px;" class="steam-advisor">
       <img class="steam-advisor-img" src="./assets/steam-logo.svg" alt="" srcset="" width="60px">
       <p class="steam-advisor-text" style=" color: #fafafa;  font-weight: 500; font-size: 18px; line-height: 26px;">A Steam é uma plataforma digital onde você pode comprar, <br>baixar e jogar uma vasta seleção de jogos no seu computador.</p>
@@ -101,7 +103,7 @@
 
 
   <main class="main-container">
-    <section class="application-links" style="margin-top: 45px;">
+    <section class="application-links">
       <ul class="links-items-container">
         <li>
           <a href="#" class="links-items">Novidades e tendências</a>
@@ -121,25 +123,24 @@
       </ul>
     </section>
 
-    <div class="input-container" style="margin-top: 45px;">
-      <input type="text" placeholder="BUSCAR" value="">
+
+    <div class="input-container">
+      <input type="text" placeholder="BUSCAR" value="" class="search-game">
       <img src="./assets/search.svg" loading='lazy' alt="" srcset="" class="input-icon">
     </div>
 
     <section class="card-game-container">
       <div class="card-game-element" id="card-game">
       </div>
-      <div style="display: flex; place-content: center; margin-top: 2.15rem;">
+      <div class="load-more-btn-container">
         <button type="button" class="see-more" id="load-more-games">VER MAIS</button>
       </div>
     </section>
   </main>
-  <!-- Footer in some screen size arent at the end -> FIX THAT -->
-  <footer class="footer-home" style="margin-top: 45px;">
+
+  <footer class="footer-home">
     <img src="./assets/steam-logo.svg" loading='lazy' alt="Logo" aria-label="Logo Imagem" fetchpriority="high">
   </footer>
-  <!-- <div style="border: 2px dashed purple; padding: 1.5rem; margin: 2rem;" class="pre-component">
-  </div> !-->
 </body>
 
 </html>
