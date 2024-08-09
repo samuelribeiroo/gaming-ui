@@ -115,14 +115,8 @@ function displaySearchResults(results) {
       cardBoxElement.innerHTML = `<img src="${imageURL}" alt="${name}" class="card-game-img" loading="lazy" fetchpriority="high">`;
       cardImageGamecontainer.appendChild(cardBoxElement);
     });
-  }
 
-  if (results.length >= gamesAPI.length) {
-    loadMoreButton.disabled = true;
-    loadMoreButton.textContent = "Todos os jogos carregados.";
-  } else {
-    loadMoreButton.disabled = false;
-    loadMoreButton.textContent = "Carregar mais";
+    loadMoreButton.style.display = "none";
   }
 }
 
