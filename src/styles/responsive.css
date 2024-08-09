@@ -43,6 +43,20 @@
 }
 
 @media screen and (max-width: 768px) {
+  .user-info-container-mobile  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .hamburguer-menu {
+    display: inline-flex;
+    place-content: center;
+    gap: 18px;
+  }
+  
   .header-list,
   .user-info-container {
     display: none;

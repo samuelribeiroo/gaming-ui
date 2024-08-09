@@ -132,6 +132,26 @@ li {
   cursor: pointer;
 }
 
+.steam-advisor {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  left: 26%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-top: 212px;
+}
+
+.steam-advisor-text {
+  color: var(--slate-100);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+
 [data-carousel] {
   position: relative;
   max-width: 100%;
