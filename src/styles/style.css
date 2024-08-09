@@ -89,11 +89,29 @@ li {
 .header-item-list {
   color: var(--slate-100);
   text-decoration: none;
+  position: relative;
+}
+
+.header-item-list::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -27px;
+  left: 0;
+  height: 2px;
+  background-color: var(--sky-400);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .header-item-list:hover {
-  transition: all ease-in-out 7ms;
   color: var(--sky-400);
+  transition: color 0.3s ease; 
+}
+
+.header-item-list:hover::after {
+  transform: scaleX(1);
+
 }
 
 .user-info-container {
@@ -174,7 +192,7 @@ li {
 .links-items:hover::after {
   transform: scaleX(
     1
-  ); /* Expande o elemento para largura total ao passar o mouse */
+  ); 
 }
 
 .footer-home {
