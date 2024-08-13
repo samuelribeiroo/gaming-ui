@@ -24,4 +24,8 @@ O design é fornecido através do <a href="https://github.com/iuricode/desafios-
 
 - [ ] Fluxo de informações devem ser exibido de forma clara - O usuário não pode ficar perdido dentro da interface. As ações devem ser claras através dos `buttons`.
 
-- [ ] Seguir o style guide propsoto no Figma. 
+- [ ] Seguir o style guide propsoto no Figma.
+
+- [ ] As imagens armazenadas no Firebase Storage devem estar otimizadas (loading, qualidade, alt...)
+
+- [ ] Usar técnicas de acessibilidade nas tags HTML.
